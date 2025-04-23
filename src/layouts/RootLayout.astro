@@ -13,7 +13,7 @@ const { title, description } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
 		<title>{title ?? "Nikola Tesla"}</title>
-		<Font cssVariable="--font-inter" preload />
+		<Font cssVariable="--font-geist" preload />
 	</head>
 	<body class="font-sans">
 		<slot />
@@ -26,6 +26,6 @@ const { title, description } = Astro.props;
 		margin: 0;
 		width: 100%;
 		height: 100%;
-		font-family: var(--font-inter);
+		font-family: var(--font-geist);
 	}
 </style>
