@@ -5,72 +5,83 @@ import WarpBackground from "../components/WarpBackground";
 ---
 
 <RootLayout>
-    <main
-        class="group relative w-full min-h-screen flex items-center justify-center"
-    >
-        <div class="absolute w-full h-full sm:min-h-screen -z-10">
-            <WarpBackground
-                color1="#09090b"
-                color2="#27272a"
-                color3="#52525b"
-                speed={0.6}
-                swirl={0.5}
-                swirlIterations={10}
-                shapeScale={0.3}
-                client:load
-            />
-        </div>
+	<main>
+		<div class="group relative w-full min-h-screen flex items-center justify-center">
+			<div class="absolute w-full h-full sm:min-h-screen -z-10">
+				<WarpBackground
+					color1="#09090b"
+					color2="#27272a"
+					color3="#52525b"
+					speed={0.6}
+					swirl={0.5}
+					swirlIterations={10}
+					shapeScale={0.3}
+					client:load
+				/>
+			</div>
+	
+			<div class="p-4 sm:p-8 absolute w-full flex flex-col justify-between min-h-screen z-10">
+				<h1 class="text-8xl sm:text-[160px] text-white tracking-tighter leading-20 sm:leading-36 font-bold text-balance">
+				   Nikola <br> Tesla
+				</h1>
+	
+				<div class="mb-8 flex items-center gap-4">
+					<a href="#" class="text-2xl text-zinc-900 px-5 py-2 bg-zinc-100 hover:outline-2 outline-offset-2 outline-zinc-100 rounded-full transition-all duration-300 ease-in-out">
+						Book a call
+					</a>
+					<a href="#" class="text-2xl text-zinc-100 hover:text-white px-5 py-2 bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20 rounded-full transition-all duration-300 ease-in-out">
+						View previous work
+					</a>
+				</div>
+	
+			</div>
+		</div>
+		
+		<footer class="p-4 sm:p-8 max-w-screen-lg xl:max-w-screen-md grid grid-cols-2 lg:grid-cols-4 gap-12">
+			<div>
+				<h2 class="text-xl font-normal text-zinc-200">Projects</h2>
+	
+				<div class="mt-4 flex flex-col gap-1 text-sm text-zinc-300 font-normal space-y-2">
+					<a href="#">Radio</a>
+					<a href="#">Tesla Drone</a>
+					<a href="#">Tesla Turbine</a>
+					<a href="#">Remote Control</a>
+				</div>
+			</div>
+	
+			<div>
+				<h2 class="text-xl font-normal text-zinc-200">Clients</h2>
+	
+				<div class="mt-4 flex flex-col gap-1 text-sm text-zinc-300 font-normal space-y-2">
+					<a href="#">Astro</a>
+					<a href="#">Sesame</a>
+					<a href="#">Figure Labs</a>
+					<a href="#">TailwindCSS</a>
+				</div>
+			</div>
+	
+			<div>
+				<h2 class="text-xl font-normal text-zinc-200">Find Me</h2>
+	
+				<div class="mt-4 flex flex-col gap-1 text-sm text-zinc-300 font-normal space-y-2">
+					<a href="#">GitHub</a>
+					<a href="#">Twitter</a>
+					<a href="#">Mastodon</a>
+					<a href="#">Discord</a>
+				</div>
+			</div>
+	
+			<div>
+				<h2 class="text-xl font-normal text-zinc-200">Featured On</h2>
+	
+				<div class="mt-4 flex flex-col gap-1 text-sm text-zinc-300 font-normal space-y-2">
+					<a href="#">Bytes UI</a>
+					<a href="#">JS World</a>
+					<a href="#">Console Arena</a>
+					<a href="#">The Animated Web</a>
+				</div>
+			</div>
+		</footer>
+	</main>
 
-        <div class="p-4 sm:p-8 absolute w-full flex flex-col justify-between min-h-screen z-10">
-            <h1 class="text-8xl sm:text-[160px] text-white tracking-tighter leading-20 sm:leading-36 font-bold text-balance">
-               Nikola <br> Tesla
-            </h1>
-
-            <div class="mt-48 sm:mt-0 max-w-screen-lg xl:max-w-screen-md grid grid-cols-2 lg:grid-cols-4 gap-12">
-                <div>
-                    <h2 class="text-xl font-normal text-zinc-200">Projects</h2>
-
-                    <div class="mt-4 flex flex-col gap-1 text-sm text-zinc-300 font-normal space-y-2">
-                        <a href="#">Radio</a>
-                        <a href="#">Tesla Drone</a>
-                        <a href="#">Tesla Turbine</a>
-                        <a href="#">Remote Control</a>
-                    </div>
-                </div>
-
-                <div>
-                    <h2 class="text-xl font-normal text-zinc-200">Clients</h2>
-
-                    <div class="mt-4 flex flex-col gap-1 text-sm text-zinc-300 font-normal space-y-2">
-                        <a href="#">Astro</a>
-                        <a href="#">Sesame</a>
-                        <a href="#">Figure Labs</a>
-                        <a href="#">TailwindCSS</a>
-                    </div>
-                </div>
-
-                <div>
-                    <h2 class="text-xl font-normal text-zinc-200">Find Me</h2>
-
-                    <div class="mt-4 flex flex-col gap-1 text-sm text-zinc-300 font-normal space-y-2">
-                        <a href="#">GitHub</a>
-                        <a href="#">Twitter</a>
-                        <a href="#">Mastodon</a>
-                        <a href="#">Discord</a>
-                    </div>
-                </div>
-
-                <div>
-                    <h2 class="text-xl font-normal text-zinc-200">Featured On</h2>
-
-                    <div class="mt-4 flex flex-col gap-1 text-sm text-zinc-300 font-normal space-y-2">
-                        <a href="#">Bytes UI</a>
-                        <a href="#">JS World</a>
-                        <a href="#">Console Arena</a>
-                        <a href="#">The Animated Web</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
 </RootLayout>
