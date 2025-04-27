@@ -1,6 +1,6 @@
 ---
 import RootLayout from "./RootLayout.astro";
-import WarpBackground from "../components/WarpBackground";
+import WarpBackground from "../components/warp-background";
 
 const { title, description } = Astro.props;
 ---
@@ -8,7 +8,7 @@ const { title, description } = Astro.props;
 <RootLayout title={title} description={description}>
     <div class="relative flex flex-col lg:flex-row sm:gap-12">
         <nav class="relative w-full max-sm:h-12 sm:min-h-screen sm:max-w-sm">
-            <div class="w-full h-full sm:max-w-sm absolute -z-10 sm:left-4 sm:bottom-4 sm:rounded-b-full overflow-hidden">
+            <div class="w-full h-full sm:max-w-sm fixed -z-10 sm:left-4 sm:bottom-4 sm:rounded-b-full overflow-hidden">
 				<WarpBackground
 					color1="#ffffff"
 					color2="#27272a"
