@@ -1,15 +1,28 @@
 ---
 import RootLayout from "./RootLayout.astro";
+import WarpBackground from "../components/WarpBackground";
 
 const { title, description } = Astro.props;
 ---
 
 <RootLayout title={title} description={description}>
-    <div class="p-8 flex min-h-screen gap-12 relative">
-        <nav class="w-full max-w-sm bg-zinc-50 rounded-2xl">
+    <div class="relative flex flex-col lg:flex-row sm:gap-12">
+        <nav class="relative w-full max-sm:h-12 sm:min-h-screen sm:max-w-sm">
+            <div class="w-full h-full sm:max-w-sm absolute -z-10 sm:left-4 sm:bottom-4 sm:rounded-b-full overflow-hidden">
+				<WarpBackground
+					color1="#ffffff"
+					color2="#27272a"
+					color3="#52525b"
+					speed={0.15}
+					swirl={1.5}
+					swirlIterations={10}
+					shapeScale={0.3}
+					client:load
+				/>
+			</div>
         </nav>
 
-        <main>
+        <main class="p-4 sm:p-8 ">
             <slot />
         </main>
     </div>
