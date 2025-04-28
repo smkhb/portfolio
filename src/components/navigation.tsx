@@ -7,17 +7,31 @@ export default function Navigation() {
         <div className="flex gap-12">
 
             {isOpen &&
-                <div className="flex gap-4">
+                <>
+                    <div className="hidden lg:flex gap-4">
+                        <a href="/blog" className="text-lg sm:text-2xl text-zinc-100 hover:text-white px-5 py-2 bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20 rounded-full transition-all duration-300 ease-in-out">
+                            Blog
+                        </a>
+                        <a href="/about" className="text-lg sm:text-2xl text-zinc-100 hover:text-white px-5 py-2 bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20 rounded-full transition-all duration-300 ease-in-out">
+                            About
+                        </a>
+                        <a href="/contact" className="text-lg sm:text-2xl text-zinc-100 hover:text-white px-5 py-2 bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20 rounded-full transition-all duration-300 ease-in-out">
+                            Contact
+                        </a>
+                    </div>
+
+                    <dialog open={isOpen} className="lg:hidden flex flex-col gap-4 bottom-12 right-4 bg-zinc-900">
                     <a href="/blog" className="text-lg sm:text-2xl text-zinc-100 hover:text-white px-5 py-2 bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20 rounded-full transition-all duration-300 ease-in-out">
-                        Blog
-                    </a>
-                    <a href="/about" className="text-lg sm:text-2xl text-zinc-100 hover:text-white px-5 py-2 bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20 rounded-full transition-all duration-300 ease-in-out">
-                        About
-                    </a>
-                    <a href="/contact" className="text-lg sm:text-2xl text-zinc-100 hover:text-white px-5 py-2 bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20 rounded-full transition-all duration-300 ease-in-out">
-                        Contact
-                    </a>
-                </div>
+                            Blog
+                        </a>
+                        <a href="/about" className="text-lg sm:text-2xl text-zinc-100 hover:text-white px-5 py-2 bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20 rounded-full transition-all duration-300 ease-in-out">
+                            About
+                        </a>
+                        <a href="/contact" className="text-lg sm:text-2xl text-zinc-100 hover:text-white px-5 py-2 bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20 rounded-full transition-all duration-300 ease-in-out">
+                            Contact
+                        </a>
+                    </dialog>
+                </>
             }
 
             <button type="button" onClick={() => setIsOpen(prev => !prev)} className="w-6 sm:w-8 text-white cursor-pointer">
