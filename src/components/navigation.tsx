@@ -20,16 +20,22 @@ export default function Navigation() {
                         </a>
                     </div>
 
-                    <dialog open={isOpen} className="lg:hidden flex flex-col gap-4 bottom-12 right-4 bg-zinc-900">
-                    <a href="/blog" className="text-lg sm:text-2xl text-zinc-100 hover:text-white px-5 py-2 bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20 rounded-full transition-all duration-300 ease-in-out">
-                            Blog
-                        </a>
-                        <a href="/about" className="text-lg sm:text-2xl text-zinc-100 hover:text-white px-5 py-2 bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20 rounded-full transition-all duration-300 ease-in-out">
-                            About
-                        </a>
-                        <a href="/contact" className="text-lg sm:text-2xl text-zinc-100 hover:text-white px-5 py-2 bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20 rounded-full transition-all duration-300 ease-in-out">
-                            Contact
-                        </a>
+                    <dialog open={isOpen} className="lg:hidden absolute z-50 w-full h-full flex flex-col gap-4 top-0 bg-zinc-900/20 backdrop-blur-md">
+                        <div className="fixed bottom-32 left-4 sm:left-8 flex flex-col gap-4">
+                            <a href="/blog" className="w-fit text-lg sm:text-2xl text-zinc-100 hover:text-white px-5 py-2 bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20 rounded-full transition-all duration-300 ease-in-out">
+                                Blog
+                            </a>
+                            <a href="/about" className="w-fit text-lg sm:text-2xl text-zinc-100 hover:text-white px-5 py-2 bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20 rounded-full transition-all duration-300 ease-in-out">
+                                About
+                            </a>
+                            <a href="/contact" className="w-fit text-lg sm:text-2xl text-zinc-100 hover:text-white px-5 py-2 bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20 rounded-full transition-all duration-300 ease-in-out">
+                                Contact
+                            </a>
+
+                            <button type="button" onClick={() => setIsOpen(false)} className="w-fit text-lg sm:text-2xl text-zinc-100 hover:text-white px-5 py-2 bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20 rounded-full transition-all duration-300 ease-in-out">
+                                Close
+                            </button>
+                        </div>
                     </dialog>
                 </>
             }
