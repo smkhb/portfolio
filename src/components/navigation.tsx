@@ -14,7 +14,7 @@ export default function Navigation({ children }: { children: React.ReactNode; })
                     </div>
 
                     <dialog open={isOpen} className="lg:hidden absolute z-50 w-full h-full flex flex-col gap-4 top-0 bg-zinc-900/20 backdrop-blur-md animate-[fade-in_300ms_ease-in-out]">
-                        <div className="fixed bottom-32 left-4 sm:left-8 flex flex-col items-center justify-center gap-4 animate-[fade-in_1.5s_ease-in-out]">
+                        <div className="fixed bottom-32 left-4 sm:left-8 flex flex-col items-start justify-center gap-4 animate-[fade-in_1.5s_ease-in-out]">
                             <MobileLink href="/blog">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" aria-hidden>
                                     <title>Blog Icon</title>
