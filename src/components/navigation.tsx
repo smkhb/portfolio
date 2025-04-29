@@ -1,6 +1,7 @@
 import { useState } from "react";
+import Link from "./link.astro";
 
-export default function Navigation() {
+export default function Navigation({ children }: { children: React.ReactNode; }) {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -9,28 +10,13 @@ export default function Navigation() {
             {isOpen &&
                 <>
                     <div className="hidden lg:flex gap-4 animate-[fade-in_500ms_ease-in-out]">
-                        <a href="/blog" className="text-lg sm:text-2xl text-zinc-100 hover:text-white px-5 py-2 bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20 rounded-full transition-all duration-300 ease-in-out">
-                            Blog
-                        </a>
-                        <a href="/about" className="text-lg sm:text-2xl text-zinc-100 hover:text-white px-5 py-2 bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20 rounded-full transition-all duration-300 ease-in-out">
-                            About
-                        </a>
-                        <a href="/contact" className="text-lg sm:text-2xl text-zinc-100 hover:text-white px-5 py-2 bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20 rounded-full transition-all duration-300 ease-in-out">
-                            Contact
-                        </a>
+                        {children}
                     </div>
 
                     <dialog open={isOpen} className="lg:hidden absolute z-50 w-full h-full flex flex-col gap-4 top-0 bg-zinc-900/20 backdrop-blur-md animate-[fade-in_300ms_ease-in-out]">
                         <div className="fixed bottom-32 left-4 sm:left-8 flex flex-col gap-4 animate-[fade-in_2s_ease-in-out]">
-                            <a href="/blog" className="w-fit text-lg sm:text-2xl text-zinc-100 hover:text-white px-5 py-2 bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20 rounded-full transition-all duration-300 ease-in-out">
-                                Blog
-                            </a>
-                            <a href="/about" className="w-fit text-lg sm:text-2xl text-zinc-100 hover:text-white px-5 py-2 bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20 rounded-full transition-all duration-300 ease-in-out">
-                                About
-                            </a>
-                            <a href="/contact" className="w-fit text-lg sm:text-2xl text-zinc-100 hover:text-white px-5 py-2 bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20 rounded-full transition-all duration-300 ease-in-out">
-                                Contact
-                            </a>
+
+                            {children}
 
                             <button type="button" onClick={() => setIsOpen(false)} className="w-fit text-lg sm:text-2xl text-zinc-100 hover:text-white px-5 py-2 bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20 rounded-full transition-all duration-300 ease-in-out">
                                 Close

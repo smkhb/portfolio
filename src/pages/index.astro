@@ -3,6 +3,8 @@ import Navigation from "../components/navigation";
 import RootLayout from "../layouts/RootLayout.astro";
 import WarpBackground from "../components/warp-background";
 import AvailableForWork from "../components/available.astro";
+import H1 from "../components/h1.astro";
+import Link from "../components/link.astro";
 ---
 
 <RootLayout>
@@ -23,24 +25,22 @@ import AvailableForWork from "../components/available.astro";
 
 			<div class="p-4 sm:p-8 absolute w-full flex flex-col justify-between min-h-screen z-10">
 				<div>
-					<h1 class="text-8xl sm:text-[160px] text-white tracking-tighter leading-20 sm:leading-36 font-bold text-balance">
-						Nikola <br /> Tesla
-					</h1>
+					<H1 size="large"> Nikola <br /> Tesla </H1>
 				</div>
 
 				<div>
 					<AvailableForWork className="py-4" />
 					<div class="mb-8 flex items-center justify-between">
 						<div class="flex items-center gap-4">
-							<a href="#" class="text-lg sm:text-2xl text-zinc-900 px-5 py-2 bg-zinc-100 hover:outline-2 outline-offset-2 outline-zinc-100 rounded-full transition-all duration-300 ease-in-out">
-								Book a call
-							</a>
-							<a href="/astro" class="text-lg sm:text-2xl text-zinc-100 hover:text-white px-5 py-2 bg-transparent hover:bg-zinc-100/20 hover:outline-2 outline-offset-2 outline-zinc-100/20 rounded-full transition-all duration-300 ease-in-out">
-								View previous work
-							</a>
+							<Link href="#">Book a call</Link>
+							<Link href="/astro" variant="secondary">View previous work</Link>
 						</div>
 
-						<Navigation client:load />
+						<Navigation client:load>
+							<Link href="/blog" variant="secondary">Blog</Link>
+							<Link href="/about" variant="secondary">About</Link>
+							<Link href="/contact" variant="secondary">Contact</Link>
+						</Navigation>
 					</div>
 				</div>
 			</div>

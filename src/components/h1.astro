@@ -1,0 +1,21 @@
+---
+import clsx from "clsx/lite";
+
+type Props = {
+    className?: string;
+    size?: "default" | "large";
+}
+
+const { size = "default", className } = Astro.props;
+---
+
+<h1
+    class={clsx(
+        "text-white font-bold text-balance",
+        size === "default" && "text-4xl sm:text-8xl tracking-tight leading-20",
+        size === "large" && "text-8xl sm:text-[160px] tracking-tighter leading-20 sm:leading-36",
+        className,
+    )}
+>
+    <slot />
+</h1>
