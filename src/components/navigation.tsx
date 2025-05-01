@@ -23,9 +23,10 @@ export default function Navigation({ children }: { children: React.ReactNode; })
                         <motion.dialog
                             open={isOpen}
                             initial={{ filter: "blur(20px)", opacity: 0 }}
-                            transition={{ ease: "easeInOut", duration: 0.3 }}
+                            transition={{ ease: "easeInOut", duration: 0.25 }}
                             animate={{ filter: "blur(0px)", opacity: 1 }}
-                            exit={{ filter: "blur(20px)", opacity: 0, }}
+                            exit={{ filter: "blur(20px)", opacity: 0 }}
+                            onClick={() => setIsOpen(false)}
                             className="lg:hidden absolute z-50 w-full h-full flex flex-col gap-4 top-0 bg-zinc-900/20 backdrop-blur-md">
 
                             <div className="fixed bottom-32 left-4 sm:left-8 flex flex-col items-start justify-center gap-4">
