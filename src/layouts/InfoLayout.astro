@@ -6,9 +6,9 @@ const { title, description } = Astro.props;
 ---
 
 <RootLayout title={title} description={description}>
-    <div class="relative flex gap-4">
-        <nav class="relative w-full max-sm:w-4 sm:min-h-screen">
-            <div class="w-full h-full sm:max-w-sm max-sm:w-4 fixed -z-10 sm:left-4 sm:bottom-4 sm:rounded-b-full overflow-hidden">
+    <div class="flex gap-4">
+        <nav class="relative w-4 md:min-w-2xs xl:min-w-sm sm:min-h-screen sm:ml-4 sm:pb-4">
+            <div class="w-full h-full max-sm:w-4 md:max-w-2xs xl:max-w-sm fixed -z-10 sm:bottom-4 sm:rounded-b-full overflow-hidden">
 				<WarpBackground
 					color1="#ffffff"
 					color2="#27272a"
