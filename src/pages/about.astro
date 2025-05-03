@@ -5,10 +5,10 @@ import InfoLayout from "../layouts/InfoLayout.astro";
 
 <InfoLayout>
      <div class="pt-0 p-4 sm:p-8 min-h-screen flex flex-col justify-between">
-          <div>
+          <div class="space-y-4 sm:space-y-12">
                <H1> Get to know Nikola </H1>
 
-               <p class="mt-4 sm:mt-12 text-2xl sm:text-4xl text-zinc-400 text-balance">
+               <p class="text-2xl sm:text-4xl text-zinc-500 text-balance">
                     <a href="https://en.wikipedia.org/wiki/Nikola_Tesla" target="_blank" class="underline underline-offset-4 decoration-zinc-400 hover:text-zinc-50 hover:decoration-zinc-200">
                          Nikola Tesla
                     </a>
@@ -17,6 +17,20 @@ import InfoLayout from "../layouts/InfoLayout.astro";
                     His innovations laid the foundation for modern alternating current
                     (AC) power systems and many technologies still in use today.
                </p>
+          </div>
+
+          <div class="px-4 space-y-2 text-base sm:text-lg">
+               <h2 class="text-zinc-400 underline underline-offset-4 decoration-zinc-500">Achievements</h2>
+
+               <ul class="text-zinc-400 list-disc list-outside">
+                    <li>Alternating Current (AC) System</li>
+                    <li>Tesla Coil</li>
+                    <li>Induction Motor</li>
+                    <li>Wireless Transmission</li>
+                    <li>Radio and Remote Control</li>
+                    <li>Hydroelectric Power at Niagara Falls</li>
+                    <li>X-Ray Imaging</li>
+               </ul>
           </div>
      </div>
 </InfoLayout>
