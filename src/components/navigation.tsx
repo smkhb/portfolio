@@ -48,7 +48,7 @@ export default function Navigation({ children }: { children: React.ReactNode; })
                                     About
                                 </MobileLink>
 
-                                <MobileLink href="/about">
+                                <MobileLink href="/contact">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" aria-hidden>
                                         <title>Smiley Face Icon</title>
                                         <path fill="currentColor" d="M16.791 13.343c.781-.274 1.752-.31 3.78-.315h1.426c-.007.097.01-.097 0 0a1.478 1.478 0 0 1-.424.908l-7.65 7.69a1.262 1.262 0 0 1-.895.37c-.097.01.097-.006 0 0v-1.424c.005-2.03.041-3 .314-3.78a5.621 5.621 0 0 1 3.45-3.45" />
