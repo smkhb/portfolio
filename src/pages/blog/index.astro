@@ -1,8 +1,8 @@
 ---
-import H1 from "../components/h1.astro";
+import H1 from "../../components/h1.astro";
 import type { MarkdownHeading } from "astro";
 import { getCollection } from "astro:content";
-import InfoLayout from "../layouts/InfoLayout.astro";
+import InfoLayout from "../../layouts/InfoLayout.astro";
 
 const allArticles = await getCollection("articles");
 ---
@@ -15,8 +15,8 @@ const allArticles = await getCollection("articles");
                {
                    allArticles.map((article) => (
                        <li>
-                           <a class="space-y-1" href={`/blog/${article.rendered?.metadata ? (article.rendered.metadata.headings as unknown as MarkdownHeading[])[0].slug : article.id}`} >
-                               <h2 class="text-2xl xl:text-4xl text-zinc-200 text-balance font-medium">
+                           <a class="space-y-1 group" href={`/blog/${article.rendered?.metadata ? (article.rendered.metadata.headings as unknown as MarkdownHeading[])[0].slug : article.id}`} >
+                               <h2 class="text-2xl xl:text-4xl text-zinc-200 text-balance font-medium underline group-hover:underline-offset-2 decoration-transparent group-hover:decoration-zinc-500">
                                    {article.data.title}
                                </h2>
                                <p class="text-xl text-zinc-400">{article.data.snippet}</p>

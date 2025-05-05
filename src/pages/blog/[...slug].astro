@@ -1,0 +1,73 @@
+---
+import type { MarkdownHeading } from "astro";
+import { getCollection, render } from "astro:content";
+import InfoLayout from "../../layouts/InfoLayout.astro";
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+    const articles = await getCollection("articles");
+
+    return articles.map((article) => ({
+        params: {
+            slug: article.rendered?.metadata
+                ? (
+                      article.rendered.metadata
+                          .headings as unknown as MarkdownHeading[]
+                  )[0].slug
+                : article.id,
+        },
+        props: { article },
+    }));
+}
+
+const { article } = Astro.props;
+
+if (article === undefined) {
+    return new Response("Article not found", { status: 404 });
+}
+
+const { Content } = await render(article);
+
+const allArticles = await getCollection("articles");
+
+const relatedArticles = allArticles.filter(
+    (relatedArticle) =>
+        relatedArticle.data.category === article.data.category &&
+        relatedArticle.id !== article.id,
+);
+---
+
+<InfoLayout title={article.data.title} frontmatter={article.data}>
+    <section class="px-4 py-8">
+        <Content />
+
+        {
+            relatedArticles.length > 0 && (
+                <div>
+                    <h2 class="mt-8 text-xl text-gray-900 font-medium">
+                        Related Articles
+                    </h2>
+
+                    <ul class="mt-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {relatedArticles.map((article) => (
+                            <li class="group">
+                                <a
+                                    href={`/blog/${article.rendered?.metadata ? (article.rendered.metadata.headings as unknown as MarkdownHeading[])[0].slug : article.id}`}
+                                >
+                                    <h3 class="text-base text-gray-900 group-hover:text-orange-600 underline underline-offset-2 decoration-dotted decoration-transparent group-hover:decoration-gray-900 transition-all duration-300 ease-in-out">
+                                        {article.data.title}
+                                    </h3>
+                                    <p class="text-sm text-gray-600 group-hover:text-gray-900">
+                                        {/* {format(article.data.pubDate, "PPP")}{" "} */}
+                                        &middot; {article.data.author}
+                                    </p>
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )
+        }
+    </section>
+</InfoLayout>
