@@ -1,8 +1,8 @@
 ---
 import type { MarkdownHeading } from "astro";
+import Prose from "../../components/prose.astro";
 import { getCollection, render } from "astro:content";
 import InfoLayout from "../../layouts/InfoLayout.astro";
-import Prose from "../../components/prose.astro";
 
 export const prerender = true;
 
@@ -45,6 +45,14 @@ const relatedArticles = allArticles.filter(
             <Content />
         </Prose>
 
+        <p class="my-4 text-sm italic text-zinc-300">
+            This is an excerpt from {`${article.data.author}'s`}
+            <a href={article.data.originalLink} target="_blank" class="underline underline-offset-4 decoration-zinc-100 hover:decoration-white hover:text-white">
+                Make Something Heavy
+            </a>
+            article. I highly recommend you give it a read!
+        </p>
+
         {
             relatedArticles.length > 0 && (
                 <div>
@@ -62,7 +70,7 @@ const relatedArticles = allArticles.filter(
                                         {article.data.title}
                                     </h3>
                                     <p class="text-sm text-gray-600 group-hover:text-gray-900">
-                                        {/* {format(article.data.pubDate, "PPP")}{" "} */}
+                                        {(article.data.pubDate)} 
                                         &middot; {article.data.author}
                                     </p>
                                 </a>
