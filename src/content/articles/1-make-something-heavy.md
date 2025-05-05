@@ -2,6 +2,7 @@
 isDraft: false
 title: Make Something Heavy
 snippet: We're creating more than ever, but it weighs nothing.
+slug: make-something-heavy
 author: Anu Atluru 
 category: Creation
 readingDuration: 1

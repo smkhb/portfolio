@@ -11,12 +11,7 @@ export async function getStaticPaths() {
 
     return articles.map((article) => ({
         params: {
-            slug: article.rendered?.metadata
-                ? (
-                      article.rendered.metadata
-                          .headings as unknown as MarkdownHeading[]
-                  )[0].slug
-                : article.id,
+            slug: article.data.slug
         },
         props: { article },
     }));
@@ -63,9 +58,7 @@ const relatedArticles = allArticles.filter(
                     <ul class="mt-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         {relatedArticles.map((article) => (
                             <li class="group">
-                                <a
-                                    href={`/blog/${article.rendered?.metadata ? (article.rendered.metadata.headings as unknown as MarkdownHeading[])[0].slug : article.id}`}
-                                >
+                                <a href={`/blog/${article.data.slug}`}>
                                     <h3 class="text-base text-gray-900 group-hover:text-orange-600 underline underline-offset-2 decoration-dotted decoration-transparent group-hover:decoration-gray-900 transition-all duration-300 ease-in-out">
                                         {article.data.title}
                                     </h3>

@@ -7,6 +7,7 @@ const articles = defineCollection({
         cover: image(),
         coverAlt: z.string(),
         title: z.string(),
+        slug: z.string(),
         snippet: z.string(),
         category: z.string(),
         pubDate: z.coerce.date(),
