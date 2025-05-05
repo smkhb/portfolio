@@ -43,7 +43,7 @@ const relatedArticles = allArticles.filter(
         <p class="my-4 text-sm italic text-zinc-300">
             This is an excerpt from {`${article.data.author}'s`}
             <a href={article.data.originalLink} target="_blank" class="underline underline-offset-4 decoration-zinc-100 hover:decoration-white hover:text-white">
-                Make Something Heavy
+                {article.data.title}
             </a>
             article. I highly recommend you give it a read!
         </p>
@@ -51,18 +51,18 @@ const relatedArticles = allArticles.filter(
         {
             relatedArticles.length > 0 && (
                 <div>
-                    <h2 class="mt-8 text-xl text-gray-900 font-medium">
+                    <h2 class="mt-8 sm:mt-12 text-xl text-zinc-400 font-medium">
                         Related Articles
                     </h2>
 
-                    <ul class="mt-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <ul class="mt-1">
                         {relatedArticles.map((article) => (
                             <li class="group">
                                 <a href={`/blog/${article.data.slug}`}>
-                                    <h3 class="text-base text-gray-900 group-hover:text-orange-600 underline underline-offset-2 decoration-dotted decoration-transparent group-hover:decoration-gray-900 transition-all duration-300 ease-in-out">
+                                    <h3 class="text-base text-zinc-50 underline underline-offset-2 decoration-transparent group-hover:decoration-zinc-100">
                                         {article.data.title}
                                     </h3>
-                                    <p class="text-sm text-gray-600 group-hover:text-gray-900">
+                                    <p class="text-sm text-zinc-400">
                                         {(article.data.pubDate)} 
                                         &middot; {article.data.author}
                                     </p>
