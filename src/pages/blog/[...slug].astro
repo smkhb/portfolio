@@ -2,6 +2,7 @@
 import type { MarkdownHeading } from "astro";
 import { getCollection, render } from "astro:content";
 import InfoLayout from "../../layouts/InfoLayout.astro";
+import Prose from "../../components/prose.astro";
 
 export const prerender = true;
 
@@ -40,7 +41,9 @@ const relatedArticles = allArticles.filter(
 
 <InfoLayout title={article.data.title} frontmatter={article.data}>
     <section class="px-4 py-8">
-        <Content />
+        <Prose>
+            <Content />
+        </Prose>
 
         {
             relatedArticles.length > 0 && (
