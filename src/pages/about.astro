@@ -1,10 +1,11 @@
 ---
+import Footer from "../components/footer.astro";
 import H1 from "../components/h1.astro";
 import InfoLayout from "../layouts/InfoLayout.astro";
 ---
 
 <InfoLayout>
-     <div class="pt-0 p-4 sm:py-8 sm:px-12 min-h-screen flex flex-col justify-between">
+     <div class="pt-0 p-4 sm:py-8 sm:px-12 min-h-screen flex flex-col justify-between gap-32">
           <div class="space-y-4 sm:space-y-12">
                <H1> Get to know Nikola </H1>
 
@@ -19,7 +20,7 @@ import InfoLayout from "../layouts/InfoLayout.astro";
                </p>
           </div>
 
-          <div class="px-4 space-y-2 text-base sm:text-lg">
+          <div class="space-y-2 text-base sm:text-lg">
                <h2 class="text-zinc-400 underline underline-offset-4 decoration-zinc-500">Achievements</h2>
 
                <ul class="text-zinc-400 list-disc list-outside">
