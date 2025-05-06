@@ -3,6 +3,7 @@ import H1 from "../../components/h1.astro";
 import type { MarkdownHeading } from "astro";
 import { getCollection } from "astro:content";
 import InfoLayout from "../../layouts/InfoLayout.astro";
+import { formatDate } from "../../lib/utils";
 
 const allArticles = await getCollection("articles");
 ---
@@ -21,7 +22,7 @@ const allArticles = await getCollection("articles");
                                </h2>
                                <p class="text-lg text-zinc-400">{article.data.snippet}</p>
                                <p class="text-sm text-zinc-400">
-                                   {(article.data.pubDate)} &middot;{" "}
+                                   {formatDate((article.data.pubDate))} &middot;{" "}
                                    {article.data.author}
                                </p>
                            </a>

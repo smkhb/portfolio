@@ -12,6 +12,9 @@ originalLink: https://thenanyu.com/ux.html
 cover: https://pbs.twimg.com/media/Gn7z7RcbEAAr118?format=jpg&name=medium
 ---
 
+# AI adoption is a UX problem
+> We have plenty of intelligence. The problem is making it usable
+
 Toby Lütke, CEO of Shopify, just made the rounds on Twitter with an internal memo that he sent to his company. In it, he basically tells all of his employees that the time to mass adopt AI in their business is now. No matter which job or role you're in, you need to be using AI all the time, every day, or risk damaging your performance review. If you haven't seen it, read it for yourself here:
 
 

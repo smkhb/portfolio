@@ -3,6 +3,7 @@ import type { MarkdownHeading } from "astro";
 import Prose from "../../components/prose.astro";
 import { getCollection, render } from "astro:content";
 import InfoLayout from "../../layouts/InfoLayout.astro";
+import { formatDate } from "../../lib/utils";
 
 export const prerender = true;
 
@@ -63,7 +64,7 @@ const relatedArticles = allArticles.filter(
                                         {article.data.title}
                                     </h3>
                                     <p class="text-sm text-zinc-400">
-                                        {(article.data.pubDate)} 
+                                        {formatDate((article.data.pubDate))} 
                                         &middot; {article.data.author}
                                     </p>
                                 </a>
