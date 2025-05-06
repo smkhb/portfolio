@@ -1,6 +1,5 @@
 ---
 import H1 from "../../components/h1.astro";
-import type { MarkdownHeading } from "astro";
 import { getCollection } from "astro:content";
 import InfoLayout from "../../layouts/InfoLayout.astro";
 import { formatDate } from "../../lib/utils";
@@ -9,7 +8,7 @@ const allArticles = await getCollection("articles");
 ---
 
 <InfoLayout>
-     <div class="pt-0 p-4 sm:py-8 sm:px-12 min-h-screen">
+     <div class="pt-0 p-4 sm:pt-8 sm:px-12 pb-20 min-h-screen">
           <H1> Blog </H1>
 
           <ul class="mt-8 sm:mt-12 space-y-4 sm:space-y-8">
