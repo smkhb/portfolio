@@ -1,8 +1,8 @@
 ---
 import H1 from "../../components/h1.astro";
+import { formatDate } from "../../lib/utils";
 import { getCollection } from "astro:content";
 import InfoLayout from "../../layouts/InfoLayout.astro";
-import { formatDate } from "../../lib/utils";
 
 const allArticles = await getCollection("articles");
 ---

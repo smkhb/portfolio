@@ -1,9 +1,8 @@
 ---
-import type { MarkdownHeading } from "astro";
+import { formatDate } from "../../lib/utils";
 import Prose from "../../components/prose.astro";
 import { getCollection, render } from "astro:content";
 import InfoLayout from "../../layouts/InfoLayout.astro";
-import { formatDate } from "../../lib/utils";
 
 export const prerender = true;
 
