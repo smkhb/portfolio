@@ -15,7 +15,7 @@ console.log(pathname)
 
 <a href={href} target={openNewTab ? "_blank" : "_self"} 
     class={clsx(
-        "w-fit group flex items-center gap-1 text-base sm:text-lg hover:text-zinc-100 cursor-pointer",
+        "w-fit group flex items-center gap-1 text-base hover:text-zinc-100 cursor-pointer",
         pathname === href ? "text-zinc-100" : "text-zinc-500"
     )}>
     <slot />
