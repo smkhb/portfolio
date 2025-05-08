@@ -2,26 +2,25 @@
 import { actions } from "astro:actions";
 import H1 from "../../components/h1.astro";
 import { formatDate } from "../../lib/utils";
-import { getCollection } from "astro:content";
 import InfoLayout from "../../layouts/InfoLayout.astro";
+import clsx from "clsx";
 
-export const prerender = false;
+const selectedCategory = Astro.url.searchParams.get("category") || "all";
 
-const result = Astro.getActionResult(actions.categories.filterByCategory);
+const result = await Astro.callAction(actions.categories.filterByCategory, {
+    category: selectedCategory,
+});
 
-if(result?.error){
-    console.log('error', result.error);
+if (result?.error) {
+    console.log("error", result.error);
 }
 
-const currentCategory = result?.data?.category;
+const articles = result?.data?.articles || [];
 
-const allArticles = await getCollection("articles");
 
 const categories = [
-    ...new Set(allArticles.map((article) => article.data.category)),
+    ...new Set(articles.map((article) => article.data.category)),
 ];
-
-const filteredArticles = allArticles.filter((article) => article.data.category === currentCategory);
 ---
 
 <InfoLayout>
@@ -30,7 +29,9 @@ const filteredArticles = allArticles.filter((article) => article.data.category =
 
         <ul class="mt-8 sm:mt-12 flex items-center gap-4">
             <li>
-                <a href="/blog" class="text-zinc-400 hover:text-zinc-300">
+                <a href="/blog" class={clsx("",
+                    selectedCategory === "all" ? "text-white" : "text-zinc-400 hover:text-zinc-300"
+                )}>
                     All
                 </a>
             </li>
@@ -38,12 +39,14 @@ const filteredArticles = allArticles.filter((article) => article.data.category =
             {
                 categories.map((category) => (
                     <li>
-                        <form method="POST" action={actions.categories.filterByCategory}>
-                            <input required name="category" value={category} class="hidden"/>
-                            <button type="submit" class="text-zinc-400 hover:text-zinc-300 cursor-pointer">
-                                {category}
-                            </button>
-                        </form>
+                        <a
+                            href={`/blog?category=${category.toLowerCase()}`}
+                            class={clsx("",
+                                selectedCategory === category.toLowerCase() ? "text-white" : "text-zinc-400 hover:text-zinc-200"
+                            )}
+                        >
+                            {category}
+                        </a>
                     </li>
                 ))
             }
@@ -51,30 +54,7 @@ const filteredArticles = allArticles.filter((article) => article.data.category =
 
         <ul class="mt-4 space-y-4 sm:space-y-8">
             {
-                currentCategory ?
-                filteredArticles.map((article) => (
-                    <li>
-                        <a
-                            class="space-y-1 group"
-                            href={`/blog/${article.data.slug}`}
-                        >
-                            <h2 class="text-2xl xl:text-2xl text-zinc-300 group-hover:text-white text-balance font-medium underline group-hover:underline-offset-2 decoration-transparent group-hover:decoration-zinc-500">
-                                {article.data.title}
-                            </h2>
-                            <p class="text-lg text-zinc-400">
-                                {article.data.snippet}
-                            </p>
-                            <p class="text-sm text-zinc-400">
-                                {formatDate(article.data.pubDate)} &middot;{" "}
-                                {article.data.author}
-                            </p>
-                        </a>
-                    </li>
-                ))
-
-                :
-            
-                allArticles.map((article) => (
+                articles.map((article) => (
                     <li>
                         <a
                             class="space-y-1 group"
