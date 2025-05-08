@@ -4,7 +4,7 @@ title: Make Something Heavy
 snippet: We're creating more than ever, but it weighs nothing.
 slug: make-something-heavy
 author: Anu Atluru 
-category: Creation
+category: Craft
 readingDuration: 1
 pubDate: 2025 3 9
 coverAlt: Women Holding Things - Maira Kalman, 2022.

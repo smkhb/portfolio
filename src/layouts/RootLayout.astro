@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import { Font } from "astro:assets";
+import { ClientRouter } from 'astro:transitions';
 
 const { title, description } = Astro.props;
 ---
@@ -15,6 +16,7 @@ const { title, description } = Astro.props;
 		<meta name="description" content={description} />
 		<title>{title ?? "Nikola Tesla"}</title>
 		<Font cssVariable="--font-geist" preload />
+		<ClientRouter />
 	</head>
 	<body class="font-sans min-h-screen bg-zinc-900">
 		<slot />
