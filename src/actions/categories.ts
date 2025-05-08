@@ -3,6 +3,18 @@ import { defineAction } from "astro:actions";
 import { getCollection } from "astro:content";
 
 export const categories = {
+    getCategories: defineAction({
+        input: z.null(),
+        handler: async () => {
+            const allArticles = await getCollection("articles");
+
+            const categories = [
+                ...new Set(allArticles.map((article) => article.data.category)),
+            ];
+
+            return {success: true, categories}
+        }
+    }),
     filterByCategory: defineAction({
         input: z.object({
             category: z.string()

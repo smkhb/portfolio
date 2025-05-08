@@ -7,20 +7,19 @@ import clsx from "clsx";
 
 const selectedCategory = Astro.url.searchParams.get("category") || "all";
 
-const result = await Astro.callAction(actions.categories.filterByCategory, {
+const categoriesResult = await Astro.callAction(actions.categories.getCategories, null);
+
+const categories = categoriesResult?.data?.categories || [];
+
+const articlesResults = await Astro.callAction(actions.categories.filterByCategory, {
     category: selectedCategory,
 });
 
-if (result?.error) {
-    console.log("error", result.error);
+if (articlesResults?.error) {
+    console.log("error", articlesResults.error);
 }
 
-const articles = result?.data?.articles || [];
-
-
-const categories = [
-    ...new Set(articles.map((article) => article.data.category)),
-];
+const articles = articlesResults?.data?.articles || [];
 ---
 
 <InfoLayout>
