@@ -1,25 +1,26 @@
 ---
+import clsx from "clsx";
 import { actions } from "astro:actions";
 import H1 from "../../components/h1.astro";
 import { formatDate } from "../../lib/utils";
 import InfoLayout from "../../layouts/InfoLayout.astro";
-import clsx from "clsx";
+
+export const prerender = false
+
+const categoriesResult = await Astro.callAction(actions.categories.getCategories, null);
+const categories = categoriesResult?.data?.categories || [];
 
 const selectedCategory = Astro.url.searchParams.get("category") || "all";
 
-const categoriesResult = await Astro.callAction(actions.categories.getCategories, null);
-
-const categories = categoriesResult?.data?.categories || [];
-
-const articlesResults = await Astro.callAction(actions.categories.filterByCategory, {
+const articlesResult = await Astro.callAction(actions.categories.filterByCategory, {
     category: selectedCategory,
 });
 
-if (articlesResults?.error) {
-    console.log("error", articlesResults.error);
+if (articlesResult?.error) {
+    console.log("error", articlesResult.error);
 }
 
-const articles = articlesResults?.data?.articles || [];
+const articles = articlesResult?.data?.articles || [];
 ---
 
 <InfoLayout>
@@ -76,11 +77,3 @@ const articles = articlesResults?.data?.articles || [];
         </ul>
     </div>
 </InfoLayout>
-
-<script>
-    const searchParams = new URLSearchParams(window.location.search);
-
-    for (const value of searchParams.values()) {
-        console.log(value);
-    }
-</script>
