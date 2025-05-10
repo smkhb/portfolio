@@ -29,8 +29,8 @@ const articles = articlesResult?.data?.articles || [];
 
         <ul class="mt-8 sm:mt-12 flex items-center gap-4">
             <li>
-                <a href="/blog" class={clsx("",
-                    selectedCategory === "all" ? "text-white" : "text-zinc-400 hover:text-zinc-300"
+                <a href="/blog" class={clsx("w-fit px-4 py-1 text-sm bg-transparent rounded-full transition-all duration-300 ease-in-out",
+                    selectedCategory === "all" ? "text-white bg-zinc-100/20 outline-2 outline-offset-2 outline-zinc-100/20" : "text-zinc-400 hover:text-zinc-300"
                 )}>
                     All
                 </a>
@@ -41,8 +41,8 @@ const articles = articlesResult?.data?.articles || [];
                     <li>
                         <a
                             href={`/blog?category=${category.toLowerCase()}`}
-                            class={clsx("",
-                                selectedCategory === category.toLowerCase() ? "text-white" : "text-zinc-400 hover:text-zinc-200"
+                            class={clsx("w-fit px-4 py-1 text-sm bg-transparent rounded-full transition-all duration-300 ease-in-out",
+                                selectedCategory === category.toLowerCase() ? "text-white bg-zinc-100/20 outline-2 outline-offset-2 outline-zinc-100/20" : "text-zinc-400 hover:text-zinc-200"
                             )}
                         >
                             {category}
