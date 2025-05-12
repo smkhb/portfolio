@@ -9,8 +9,6 @@ type Props =  {
 const { href, openNewTab = true } = Astro.props
 
 const pathname = Astro.url.pathname;
-
-console.log(pathname)
 ---
 
 <a href={href} target={openNewTab ? "_blank" : "_self"} 
