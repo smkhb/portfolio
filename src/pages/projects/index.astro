@@ -1,10 +1,45 @@
 ---
+import { Image } from 'astro:assets';
 import H1 from "../../components/h1.astro";
 import InfoLayout from "../../layouts/InfoLayout.astro";
+import ACGenerator from "../../assets/ac-generator.jpg";
+import WirelessRadio from "../../assets/wireless-radio.jpg";
+import ElectricMotor from "../../assets/electro-magnetic-motor.jpg";
+
+const projects = [
+     {
+          title: "AC Generator",
+          description: "A simple AC generator built using a bicycle wheel and a few magnets.",
+          image: ACGenerator
+     },
+     {
+          title: "Wireless Radio",
+          description: "A wireless radio built using a few transistors and a lot of patience.",
+          image: WirelessRadio
+     },
+     {
+          title: "Electro-Magnetic Motor",
+          description: "An electro-magnetic motor built using a few coils and a lot of wire.",
+          image: ElectricMotor
+     }];
 ---
 
 <InfoLayout>
      <div class="pt-0 p-4 sm:pt-8 sm:px-12 pb-20 min-h-screen">
           <H1> Projects </H1>
+
+          <!-- design list to look like books instead of a normal list -->
+
+          <ul class="mt-12">
+               {projects.map((project) => (
+                    <li class="flex flex-col sm:flex-row items-center mb-8">
+                         <Image src={project.image} alt={project.title} class="w-20 h-auto rounded-lg shadow-lg mb-4 sm:mb-0 sm:mr-4" />
+                         <div class="flex flex-col">
+                              <h2 class="text-lg text-zinc-100">{project.title}</h2>
+                              <p class="text-zinc-400">{project.description}</p>
+                         </div>
+                    </li>
+               ))}
+          </ul>
      </div>
 </InfoLayout>
