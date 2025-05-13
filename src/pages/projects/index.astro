@@ -3,23 +3,23 @@ import { Image } from 'astro:assets';
 import H1 from "../../components/h1.astro";
 import InfoLayout from "../../layouts/InfoLayout.astro";
 import ACGenerator from "../../assets/ac-generator.jpg";
-import WirelessRadio from "../../assets/wireless-radio.jpg";
+import FluidPropulsion from "../../assets/fluid-propulsion.jpg";
 import ElectricMotor from "../../assets/electro-magnetic-motor.jpg";
 
 const projects = [
      {
           title: "AC Generator",
-          description: "A simple AC generator built using a bicycle wheel and a few magnets.",
+          description: "Transform mechanical energy into alternating current, powering the modern electric grid",
           image: ACGenerator
      },
      {
-          title: "Wireless Radio",
-          description: "A wireless radio built using a few transistors and a lot of patience.",
-          image: WirelessRadio
+          title: "Fluid Propulsion",
+          description: "Bladeless turbine using fluid dynamics for efficient, low-friction propulsion.",
+          image: FluidPropulsion
      },
      {
           title: "Electro-Magnetic Motor",
-          description: "An electro-magnetic motor built using a few coils and a lot of wire.",
+          description: "Harness alternating current to produce smooth, efficient rotary motion.",
           image: ElectricMotor
      }];
 ---
@@ -30,12 +30,14 @@ const projects = [
 
           <!-- design list to look like books instead of a normal list -->
 
-          <ul class="mt-12 grid grid-cols-3 gap-12">
+          <ul class="mt-12 grid grid-cols-3 gap-8">
                {projects.map((project) => (
                     <li>
-                         <Image src={project.image} alt={project.title} class="aspect-[1/1.33] rounded-lg shadow-lg mb-4 sm:mb-0 sm:mr-4" />
-                         <h2 class="text-lg text-zinc-100">{project.title}</h2>
-                         <p class="text-zinc-400">{project.description}</p>
+                         <Image src={project.image} alt={project.title} class="aspect-[1/1.33] object-center object-cover rounded-lg shadow-lg mb-4 sm:mb-0 sm:mr-4" />
+                         <div class="mt-2 px-1">
+                              <h2 class="text-base text-zinc-100">{project.title}</h2>
+                              <p class="text-sm text-zinc-400 text-balance">{project.description}</p>
+                         </div>
                     </li>
                ))}
           </ul>
