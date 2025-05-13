@@ -30,14 +30,12 @@ const projects = [
 
           <!-- design list to look like books instead of a normal list -->
 
-          <ul class="mt-12">
+          <ul class="mt-12 grid grid-cols-3 gap-12">
                {projects.map((project) => (
-                    <li class="flex flex-col sm:flex-row items-center mb-8">
-                         <Image src={project.image} alt={project.title} class="w-20 h-auto rounded-lg shadow-lg mb-4 sm:mb-0 sm:mr-4" />
-                         <div class="flex flex-col">
-                              <h2 class="text-lg text-zinc-100">{project.title}</h2>
-                              <p class="text-zinc-400">{project.description}</p>
-                         </div>
+                    <li>
+                         <Image src={project.image} alt={project.title} class="aspect-[1/1.33] rounded-lg shadow-lg mb-4 sm:mb-0 sm:mr-4" />
+                         <h2 class="text-lg text-zinc-100">{project.title}</h2>
+                         <p class="text-zinc-400">{project.description}</p>
                     </li>
                ))}
           </ul>
