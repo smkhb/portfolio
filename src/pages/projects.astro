@@ -2,9 +2,9 @@
 import { Image } from 'astro:assets';
 import H1 from "../components/h1.astro";
 import InfoLayout from "../layouts/InfoLayout.astro";
-import ACGenerator from "../../assets/ac-generator.jpg";
-import FluidPropulsion from "../../assets/fluid-propulsion.jpg";
-import ElectricMotor from "../../assets/electro-magnetic-motor.jpg";
+import ACGenerator from "../assets/ac-generator.jpg";
+import FluidPropulsion from "../assets/fluid-propulsion.jpg";
+import ElectricMotor from "../assets/electro-magnetic-motor.jpg";
 
 const projects = [
      {
@@ -27,8 +27,6 @@ const projects = [
 <InfoLayout>
      <div class="pt-0 p-4 sm:pt-8 sm:px-12 pb-20 min-h-screen">
           <H1> Projects </H1>
-
-          <!-- design list to look like books instead of a normal list -->
 
           <ul class="sm:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-16 sm:gap-8">
                {projects.map((project) => (
