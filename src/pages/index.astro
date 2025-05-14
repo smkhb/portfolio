@@ -9,7 +9,7 @@ import AvailableForWork from "../components/available.astro";
 
 <RootLayout>
 	<main>
-		<div class="group relative w-full min-h-screen flex items-center justify-center">
+		<div class="group relative w-full min-h-screen">
 			<div class="absolute w-full h-full sm:min-h-screen -z-10">
 				<WarpBackground
 					color1="#09090b"
@@ -23,11 +23,11 @@ import AvailableForWork from "../components/available.astro";
 				/>
 			</div>
 
-			<H1 size="large" className="px-6 sm:px-8 w-full fixed top-6 sm:top-8"> Nikola <br /> Tesla </H1>
-				
-			<div class="px-6 sm:px-8 w-full fixed bottom-6 sm:bottom-4">
+			<H1 size="large" className="p-6 sm:p-8 absolute z-10"> Nikola <br /> Tesla </H1>
+
+			<div class="p-6 sm:p-8 w-full min-h-screen fixed z-10 flex flex-col justify-end">
 				<AvailableForWork className="py-4" />
-				<div class="mb-2 sm:mb-8 flex items-center justify-between">
+				<div class="sm:mb-8 flex items-center justify-between">
 					<div class="flex items-center gap-4">
 						<Link href="#">Book a call</Link>
 						<Link href="/projects" variant="secondary">View recent work</Link>
@@ -40,7 +40,6 @@ import AvailableForWork from "../components/available.astro";
 					</Navigation>
 				</div>
 			</div>
-
 		</div>
 	</main>
 </RootLayout>
