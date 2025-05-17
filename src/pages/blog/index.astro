@@ -25,7 +25,7 @@ const articles = articlesResult?.data?.articles || [];
     <div class="p-4 sm:pt-8 sm:px-12 pb-20 min-h-screen">
         <H1> Blog </H1>
 
-        <ul class="mt-4 sm:mt-8 flex items-center gap-4">
+        <ul class="mt-4 flex items-center gap-4">
             <li>
                 <a href="/blog" class={clsx("w-fit px-4 py-1 text-sm bg-transparent rounded-full transition-all duration-300 ease-in-out",
                     selectedCategory === "all" ? "text-white bg-zinc-100/20 outline-2 outline-offset-2 outline-zinc-100/20" : "text-zinc-400 hover:text-zinc-300"
@@ -50,7 +50,7 @@ const articles = articlesResult?.data?.articles || [];
             }
         </ul>
 
-        <ul class="mt-4 space-y-4 sm:space-y-8">
+        <ul class="mt-4 space-y-6">
             {
                 articles.map((article) => (
                     <li>
@@ -64,7 +64,7 @@ const articles = articlesResult?.data?.articles || [];
                             <p class="text-base text-zinc-400">
                                 {article.data.snippet}
                             </p>
-                            <p class="text-sm text-zinc-400">
+                            <p class="text-sm text-zinc-500">
                                 {formatDate(article.data.pubDate)} &middot;{" "}
                                 {article.data.author}
                             </p>
