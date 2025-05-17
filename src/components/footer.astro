@@ -2,11 +2,9 @@
 import clsx from "clsx";
 import ExternalLink from "./external-link.astro";
 
-type Props = {
-    pathname: string;
-};
+export const prerender = false
 
-const { pathname } = Astro.props;
+const pathname = Astro.url.pathname;
 ---
 
 <footer class="py-4 px-4 sm:px-12 w-full fixed bottom-0 flex items-center gap-4 sm:gap-8 bg-zinc-900">
