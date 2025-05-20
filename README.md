@@ -64,11 +64,11 @@ Inside of your Astro project, you'll see the following folders and files:
 ```
 
 ## Deployment
-The site is configured for deployment on Vercel, but with slight modification it can be deployed to any hosting service.
+The site is configured for deployment on Vercel, but with slight modifications it can be deployed to any hosting service.
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## ⛔️ Changes
 The template also uses [React Paper Shaders](https://github.com/paper-design/shaders). 
-The Paper Team will be publishing [breaking changes to the Shaders library](https://github.com/paper-design/shaders?tab=readme-ov-file#getting-started) under 0.0.x versioning so check back to get updates when they release Paper Shaders v1
+The Paper Team will be publishing [breaking changes](https://github.com/paper-design/shaders?tab=readme-ov-file#getting-started) to the Shaders library under 0.0.x versioning so check back to get updates when they release Paper Shaders v1
