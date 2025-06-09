@@ -19,8 +19,9 @@ jobs:
 
       - name: Install, build e gera artefato
         uses: withastro/action@v4         # cuida do pnpm install + astro build
-        # with:
-        #   package-manager: pnpm@8       # opcional – força versão
+        with:
+          node-version: '20'  # versão do Node.js
+          package-manager: pnpm@10       # opcional – força versão
 
   deploy:
     needs: build
